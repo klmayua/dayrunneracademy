@@ -63,8 +63,51 @@ export default function AdmissionsPage() {
 
   return (
     <div className="min-h-screen bg-institutional-navy">
+      {/* Hero Section with Image */}
+      <section className="relative py-16 px-6 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=80"
+            alt="African students in modern institutional environment"
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#041326] via-[#041326]/95 to-[#041326]" />
+        </div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold text-warm-white mb-4">
+                Begin Your <span className="text-heritage-gold">Transformation</span>
+              </h1>
+              <p className="text-warm-white/60 text-lg mb-6">
+                Join Nigeria's premier workforce development institution. Your journey to a rewarding career starts here.
+              </p>
+              <div className="flex items-center gap-6 text-warm-white/50">
+                <div className="flex items-center gap-2">
+                  <Check className="w-5 h-5 text-trust-green" />
+                  <span>Accredited Certifications</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Check className="w-5 h-5 text-trust-green" />
+                  <span>89% Employment Rate</span>
+                </div>
+              </div>
+            </div>
+            <div className="hidden lg:block relative">
+              <img 
+                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80"
+                alt="Students in modern learning environment"
+                className="w-full rounded-3xl"
+              />
+              <div className="absolute inset-0 bg-[rgba(4,19,38,0.35)] rounded-3xl" />
+              <div className="absolute inset-4 border border-heritage-gold/30 rounded-[20px]" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Header */}
-      <header className="bg-charcoal-black border-b border-white/5 py-6 px-6">
+      <header className="border-b border-white/5 py-6 px-6">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 bg-gradient-to-br from-heritage-gold to-yellow-600 rounded-lg flex items-center justify-center">
@@ -393,6 +436,71 @@ export default function AdmissionsPage() {
           </div>
         </div>
       </div>
+
+      {/* Employability Section */}
+      <section className="py-20 px-6 border-t border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80"
+                alt="Young African professional in corporate environment"
+                className="w-full rounded-3xl"
+              />
+              <div className="absolute inset-0 bg-[rgba(4,19,38,0.35)] rounded-3xl" />
+              {/* Floating employment stats */}
+              <div className="absolute -bottom-6 -right-6 card p-5 rounded-2xl border border-heritage-gold/20">
+                <div className="text-3xl font-bold text-heritage-gold mb-1">89%</div>
+                <div className="text-warm-white/50 text-sm">Employed within 6 months</div>
+              </div>
+            </div>
+            <div>
+              <span className="text-trust-green text-sm font-semibold uppercase tracking-wider">Career Outcomes</span>
+              <h2 className="text-4xl font-bold text-warm-white mt-4 mb-6">Your Career is Our Mission</h2>
+              <p className="text-warm-white/50 text-lg mb-8">
+                Our programmes are designed with industry partners to ensure you graduate job-ready. We don't just teach skills – we build careers.
+              </p>
+              <div className="space-y-4">
+                {[
+                  "Direct hiring partnerships with 500+ employers",
+                  "Internship placements in your chosen field",
+                  "Career counseling from day one",
+                  "Resume building and interview preparation"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <Check className="w-5 h-5 text-trust-green flex-shrink-0" />
+                    <span className="text-warm-white/80">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Student Journey Section */}
+      <section className="py-20 px-6 card/50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-trust-green text-sm font-semibold uppercase tracking-wider">Your Journey</span>
+            <h2 className="text-4xl font-bold text-warm-white mt-4">From Admission to Employment</h2>
+          </div>
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              { step: "01", title: "Apply", desc: "Complete your application online", icon: User },
+              { step: "02", title: "Assess", desc: "Take our eligibility assessment", icon: BookOpen },
+              { step: "03", title: "Learn", desc: "Begin your programme", icon: GraduationCap },
+              { step: "04", title: "Graduate", desc: "Start your career", icon: Briefcase }
+            ].map((item, i) => (
+              <div key={i} className="card border border-white/10 rounded-2xl p-6 text-center">
+                <div className="text-5xl font-bold text-heritage-gold/20 mb-4">{item.step}</div>
+                <h3 className="text-xl font-semibold text-warm-white mb-2">{item.title}</h3>
+                <p className="text-warm-white/50 text-sm">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
