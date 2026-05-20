@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Award, Users, Globe, MapPin, Target, Heart, Lightbulb } from "lucide-react";
+import { Navbar } from "@/components/navbar";
+import { Award, Users, Globe, MapPin, Target, Heart, Lightbulb } from "lucide-react";
 
 export default function AboutPage() {
   const values = [
@@ -27,26 +28,7 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-institutional-navy">
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-institutional-navy/95 backdrop-blur-sm border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-heritage-gold to-yellow-600 rounded-lg flex items-center justify-center">
-              <GraduationCap className="w-6 h-6 text-institutional-navy" />
-            </div>
-            <span className="text-xl font-bold text-warm-white">Dayrunner Academy</span>
-          </div>
-          <div className="hidden md:flex items-center gap-8">
-            <a href="/" className="text-warm-white/70 hover:text-warm-white">Home</a>
-            <a href="/about" className="text-heritage-gold">About</a>
-            <a href="/programmes" className="text-warm-white/70 hover:text-warm-white">Programmes</a>
-            <a href="/contact" className="text-warm-white/70 hover:text-warm-white">Contact</a>
-          </div>
-          <button className="bg-heritage-gold hover:bg-heritage-gold/90 text-institutional-navy px-5 py-2 rounded-lg font-semibold">
-            Apply Now
-          </button>
-        </div>
-      </nav>
-
+      <Navbar />
       <section className="pt-32 pb-16 px-6 bg-[#071B34]">
         <div className="max-w-7xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center max-w-3xl mx-auto">
