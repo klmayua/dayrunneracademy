@@ -65,11 +65,11 @@ export default function Home() {
             <p className="text-xl text-warm-white/60 mb-10 max-w-2xl mx-auto">
               Empowering youth with industry-relevant skills, certifications, and employment pathways through world-class technical and vocational education.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button className="bg-heritage-gold hover:bg-heritage-gold/90 text-institutional-navy px-8 py-4 rounded-xl font-semibold text-lg transition-all flex items-center gap-2">
+            <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
+              <button className="bg-heritage-gold hover:bg-[#E0BB45] text-institutional-navy px-8 py-4 rounded-2xl font-semibold text-lg transition-all flex items-center gap-2 hover:-translate-y-0.5">
                 Start Your Journey <ArrowRight className="w-5 h-5" />
               </button>
-              <button className="border border-warm-white/20 hover:border-warm-white/40 text-warm-white px-8 py-4 rounded-xl font-semibold text-lg transition-all">
+              <button className="border border-white/20 hover:border-white/40 text-warm-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all hover:-translate-y-0.5">
                 Explore Programmes
               </button>
             </div>
@@ -87,17 +87,14 @@ export default function Home() {
                 {/* Gold accent frame */}
                 <div className="absolute inset-4 border border-heritage-gold/30 rounded-[20px]" />
               </div>
-              {/* Floating stat card */}
-              <div className="card absolute -bottom-6 -left-6 p-5 rounded-2xl border border-heritage-gold/20">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-trust-green/20 rounded-xl flex items-center justify-center">
-                    <Award className="w-6 h-6 text-trust-green" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-warm-white">89%</div>
-                    <div className="text-warm-white/50 text-sm">Employment Rate</div>
-                  </div>
-                </div>
+              {/* Floating circular stat card */}
+              <div className="absolute -bottom-6 -left-6 w-[112px] h-[112px] rounded-full 
+                bg-[rgba(7,20,40,0.92)] border border-heritage-gold/14 
+                shadow-[0_12px_30px_rgba(0,0,0,0.28)] flex flex-col items-center justify-center 
+                hover:scale-[1.02] transition-transform duration-220">
+                <Award className="w-6 h-6 text-heritage-gold mb-1" />
+                <div className="text-2xl font-bold text-warm-white">89%</div>
+                <div className="text-warm-white/40 text-[11px]">Employment</div>
               </div>
             </motion.div>
           </div>
