@@ -3,17 +3,13 @@
 @tailwind utilities;
 
 :root {
-  /* Page Environment */
-  --page-primary: #F5F1E8;
-  --page-secondary: #EFE8D8;
-  --page-alt: #F7F4EC;
+  /* Page Background - Deep Navy */
+  --bg-primary: #041326;
   
-  /* Operational Surfaces */
-  --surface-primary: #041326;
-  --surface-secondary: #071B34;
-  --surface-elevated: #0D2342;
-  --surface-card: #0F2847;
-  --surface-card-hover: #122D50;
+  /* Card Surfaces - LIGHTER than background for contrast */
+  --card-surface: #0A1E38;
+  --card-elevated: #0D2444;
+  --card-hover: #102A50;
   
   /* Semantic */
   --trust-green: #0FAF74;
@@ -23,80 +19,77 @@
   --warm-white: #F8FAFC;
   
   /* Legacy */
-  --institutional-navy: #081220;
-  --charcoal-black: #111827;
+  --institutional-navy: #041326;
+  --charcoal-black: #0B1F35;
 }
 
 body {
   font-family: "Inter", system-ui, sans-serif;
-  background-color: var(--surface-primary);
+  background-color: var(--bg-primary);
   color: var(--warm-white);
 }
 
-/* Surface Classes */
-.bg-page { background-color: var(--page-primary); }
-.bg-surface-primary { background-color: var(--surface-primary); }
-.bg-surface-secondary { background-color: var(--surface-secondary); }
-.bg-surface-elevated { background-color: var(--surface-elevated); }
-.bg-surface-card { background-color: var(--surface-card); }
+/* Card Classes - VISIBLY DISTINCT from background */
+.card {
+  background-color: var(--card-surface);
+  border: 1px solid rgba(212, 175, 55, 0.12);
+}
 
-/* Text Classes */
-.text-inverse { color: var(--page-primary); }
-.text-surface-muted { color: rgba(248, 250, 252, 0.6); }
-.text-surface-dim { color: rgba(248, 250, 252, 0.4); }
+.card:hover {
+  background-color: var(--card-hover);
+  border-color: rgba(212, 175, 55, 0.22);
+}
+
+.card-elevated {
+  background-color: var(--card-elevated);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+/* Legacy class mappings */
+.bg-charcoal-black {
+  background-color: var(--card-surface) !important;
+}
+
+.bg-charcoal-black\/50 {
+  background-color: rgba(10, 30, 56, 0.5) !important;
+}
+
+.bg-institutional-navy {
+  background-color: var(--bg-primary) !important;
+}
+
+/* Surface that matches background */
+.bg-institutional-navy\/95 {
+  background-color: rgba(4, 19, 38, 0.95) !important;
+}
 
 @layer components {
-  /* Card Surface */
+  /* Premium Card with proper contrast */
   .card-premium {
-    @apply bg-surface-card border border-white/[0.06] rounded-2xl;
+    background-color: var(--card-surface);
+    border: 1px solid rgba(212, 175, 55, 0.12);
+    border-radius: 1rem;
   }
   
   .card-premium:hover {
-    @apply bg-surface-card-hover border-heritage-gold/20;
+    background-color: var(--card-hover);
+    border-color: rgba(212, 175, 55, 0.22);
   }
   
-  /* Section Alternation */
-  .section-light {
-    @apply bg-page-primary;
+  /* Navbar Surface */
+  .navbar-surface {
+    background-color: rgba(4, 19, 38, 0.9);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
   
-  .section-dark {
-    @apply bg-surface-primary;
-  }
-  
-  /* Premium Pill Navbar */
-  .navbar-pill {
-    @apply fixed top-4 left-1/2 -translate-x-1/2 z-50;
-    @apply bg-surface-secondary/85 backdrop-blur-xl;
-    @apply border border-white/[0.08];
-    @apply rounded-full px-6 py-3;
-    @apply shadow-pill;
-  }
-  
-  /* Input Styles */
-  .input-premium {
-    @apply w-full bg-white/[0.04] border border-white/10 rounded-xl px-4 py-3;
-    @apply text-warm-white placeholder:text-warm-white/30;
-    @apply focus:border-heritage-gold/50 focus:outline-none focus:ring-1 focus:ring-heritage-gold/20;
-    @apply transition-all duration-200;
-  }
-  
-  /* Button Styles */
-  .btn-gold {
-    @apply bg-heritage-gold text-surface-primary font-semibold;
-    @apply px-6 py-3 rounded-xl;
-    @apply hover:brightness-110 transition-all duration-200;
-  }
-  
-  .btn-ghost {
-    @apply border border-white/20 text-warm-white;
-    @apply px-6 py-3 rounded-xl;
-    @apply hover:border-white/40 hover:bg-white/5 transition-all duration-200;
+  /* Section Surfaces */
+  .section-surface {
+    background-color: #05172E;
   }
 }
 
 @layer utilities {
+  .bg-page { background-color: var(--page-primary); }
   .text-gold-bright { color: var(--heritage-gold-bright); }
-  .bg-page-cream { background-color: var(--page-primary); }
-  .border-surface { border-color: rgba(255, 255, 255, 0.08); }
 }

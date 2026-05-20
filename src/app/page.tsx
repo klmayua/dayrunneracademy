@@ -72,7 +72,7 @@ export default function Home() {
               { value: "50+", label: "Industry Partners", icon: Building2 },
               { value: "36", label: "States Covered", icon: Map },
             ].map((stat, i) => (
-              <div key={i} className="bg-charcoal-black/50 border border-white/5 rounded-2xl p-6 text-center hover:border-heritage-gold/20 transition-all group">
+              <div key={i} className="card rounded-2xl p-6 text-center hover:border-heritage-gold/20 transition-all group">
                 <div className="w-12 h-12 bg-heritage-gold/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <stat.icon className="w-6 h-6 text-heritage-gold" strokeWidth={1.75} />
                 </div>
@@ -85,7 +85,7 @@ export default function Home() {
       </section>
 
       {/* Trust Indicators */}
-      <section className="py-12 px-6 border-y border-white/5 bg-charcoal-black/30">
+      <section className="py-12 px-6 border-y border-white/5 card/30">
         <div className="max-w-7xl mx-auto">
           <p className="text-center text-warm-white/40 text-sm mb-8">Trusted by leading organizations</p>
           <div className="flex flex-wrap justify-center items-center gap-12 opacity-50">
@@ -154,7 +154,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-charcoal-black border border-white/5 rounded-2xl p-8 hover:border-heritage-gold/30 transition-all group"
+                  className="card border border-white/5 rounded-2xl p-8 hover:border-heritage-gold/30 transition-all group"
                 >
                   <div className="w-12 h-12 bg-heritage-gold/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-heritage-gold/20 transition-colors">
                     <Icon className="w-6 h-6 text-heritage-gold" strokeWidth={1.75} />
@@ -174,7 +174,7 @@ export default function Home() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 px-6 bg-charcoal-black/50">
+      <section className="py-20 px-6 card/50">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div {...fadeUp}>
@@ -255,7 +255,7 @@ export default function Home() {
                   className="relative"
                 >
                   <div className="text-8xl font-bold text-heritage-gold/10 absolute -top-4 -left-2">{item.step}</div>
-                  <div className="relative z-10 bg-charcoal-black border border-white/5 rounded-2xl p-8">
+                  <div className="relative z-10 card border border-white/5 rounded-2xl p-8">
                     <div className="w-12 h-12 bg-heritage-gold/20 rounded-xl flex items-center justify-center mb-6">
                       <Icon className="w-6 h-6 text-heritage-gold" strokeWidth={1.75} />
                     </div>
