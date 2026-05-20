@@ -56,21 +56,21 @@ export default function Home() {
             <motion.div {...fadeUp} className="text-center lg:text-left">
               <div className="inline-flex items-center gap-2 bg-trust-green/10 border border-trust-green/20 rounded-full px-4 py-2 mb-6">
                 <span className="w-2 h-2 bg-trust-green rounded-full animate-pulse" />
-                <span className="text-trust-green text-sm font-medium">Nigeria's Premier TVET Institution</span>
+                <span className="text-trust-green text-sm font-medium">National TVET Infrastructure Partner</span>
               </div>
               <h1 className="text-5xl md:text-7xl font-bold text-warm-white mb-6 leading-tight">
-              Building Nigeria's
-              <span className="text-heritage-gold"> Future Workforce</span>
+              Technical Education
+              <span className="text-heritage-gold"> at Scale</span>
             </h1>
             <p className="text-xl text-warm-white/60 mb-10 max-w-2xl mx-auto">
-              Empowering youth with industry-relevant skills, certifications, and employment pathways through world-class technical and vocational education.
+              Nigeria's unified workforce development platform—connecting industry-demand skills programmes with national employment pathways through accredited technical and vocational training.
             </p>
             <div className="flex flex-col sm:flex-row items-start gap-4 mt-10">
               <button className="bg-heritage-gold hover:bg-[#E0BB45] text-institutional-navy px-8 py-4 rounded-2xl font-semibold text-lg transition-all flex items-center gap-2 hover:-translate-y-0.5">
-                Start Your Journey <ArrowRight className="w-5 h-5" />
+                Begin Application <ArrowRight className="w-5 h-5" />
               </button>
               <button className="border border-white/20 hover:border-white/40 text-warm-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all hover:-translate-y-0.5">
-                Explore Programmes
+                View Programme Catalogue
               </button>
             </div>
           </motion.div>
@@ -102,10 +102,10 @@ export default function Home() {
           {/* Stats with Icons */}
           <motion.div {...fadeUp} transition={{ delay: 0.2 }} className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { value: "15,000+", label: "Students Enrolled", icon: Users },
-              { value: "89%", label: "Employment Rate", icon: TrendingUp },
-              { value: "50+", label: "Industry Partners", icon: Building2 },
-              { value: "36", label: "States Covered", icon: Map },
+              { value: "15,234", label: "Active Learners", icon: Users },
+              { value: "89%", label: "6-Month Employment Rate", icon: TrendingUp },
+              { value: "52", label: "Hiring Partners", icon: Building2 },
+              { value: "36", label: "State Operations", icon: Map },
             ].map((stat, i) => (
               <div key={i} className="card rounded-2xl p-6 text-center hover:border-heritage-gold/20 transition-all group">
                 <div className="w-12 h-12 bg-heritage-gold/10 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -123,10 +123,10 @@ export default function Home() {
       <section id="programmes" className="py-20 px-6 bg-[#071B34]">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeUp} className="text-center mb-16">
-            <span className="text-trust-green text-sm font-semibold uppercase tracking-wider">Our Programmes</span>
-            <h2 className="text-4xl font-bold text-warm-white mt-4">Industry-Ready Skills</h2>
+            <span className="text-trust-green text-sm font-semibold uppercase tracking-wider">Programme Portfolio</span>
+            <h2 className="text-4xl font-bold text-warm-white mt-4">Industry-Aligned Qualifications</h2>
             <p className="text-warm-white/50 mt-4 max-w-2xl mx-auto">
-              Choose from our range of accredited TVET programmes designed to meet current market demands
+              National Certificate I-II programmes developed with industry partners to meet formal employment requirements and sector-specific competency standards.
             </p>
           </motion.div>
 
@@ -134,42 +134,42 @@ export default function Home() {
             {[
               {
                 title: "Digital Technology",
-                desc: "Software development, data analytics, cybersecurity, and IT support",
+                desc: "Software development, data analytics, cybersecurity, and IT operations. NC II certified.",
                 icon: Laptop,
                 color: "sky",
                 image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&q=80"
               },
               {
                 title: "Automotive Engineering",
-                desc: "Vehicle maintenance, diagnostics, and automotive technology",
+                desc: "Vehicle diagnostics, maintenance technology, and automotive systems. NC I certified.",
                 icon: Car,
                 color: "gold",
                 image: "https://images.unsplash.com/photo-1487754180471-31c1d3f0b8e1?w=600&q=80"
               },
               {
                 title: "Agriculture & Agribusiness",
-                desc: "Modern farming techniques, food processing, and agricultural technology",
+                desc: "Modern farming systems, food processing, and agricultural technology. NC I certified.",
                 icon: Sprout,
                 color: "green",
                 image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80"
               },
               {
                 title: "Healthcare & Nursing",
-                desc: "Patient care, medical assistance, and healthcare operations",
+                desc: "Patient care, clinical procedures, and healthcare operations. NC II certified.",
                 icon: HeartPulse,
                 color: "sky",
                 image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&q=80"
               },
               {
                 title: "Hospitality & Tourism",
-                desc: "Hotel management, culinary arts, and tourism operations",
+                desc: "Hotel operations, culinary arts, and tourism management. Certificate certified.",
                 icon: Zap,
                 color: "gold",
                 image: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=600&q=80"
               },
               {
                 title: "Manufacturing & Trades",
-                desc: "Welding, fabrication, machining, and industrial production",
+                desc: "Welding, fabrication, machining, and industrial production. NC I certified.",
                 icon: Hammer,
                 color: "green",
                 image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&q=80"
@@ -218,19 +218,19 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div {...fadeUp}>
-              <span className="text-trust-green text-sm font-semibold uppercase tracking-wider">Why Dayrunner</span>
-              <h2 className="text-4xl font-bold text-warm-white mt-4 mb-6">Your Path to Success</h2>
+              <span className="text-trust-green text-sm font-semibold uppercase tracking-wider">Institutional Framework</span>
+              <h2 className="text-4xl font-bold text-warm-white mt-4 mb-6">Structured Workforce Development</h2>
               <p className="text-warm-white/50 text-lg mb-8">
-                We combine world-class education with practical industry experience to transform ambitious youth into skilled professionals.
+                An accredited national TVET platform operating within the regulatory framework for technical education—connecting formal training to measurable employment outcomes.
               </p>
               <div className="space-y-4">
                 {[
-                  "Industry-recognized certifications",
-                  "Hands-on practical training",
-                  "Internship placements with top employers",
-                  "Career counseling and job placement support",
-                  "Flexible learning options",
-                  "Scholarship opportunities for qualifying students"
+                  "National Certification Council-accredited qualifications",
+                  "Industry-validated competency-based curriculum",
+                  "Guaranteed internship placement with hiring partners",
+                  "Dedicated employment transition support",
+                  "Structured learning pathways with progressive certification",
+                  "Means-tested scholarship allocation for qualifying applicants"
                 ].map((benefit, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-trust-green flex-shrink-0" strokeWidth={1.75} />
@@ -286,15 +286,15 @@ export default function Home() {
       <section className="py-20 px-6 bg-[#071B34]">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeUp} className="text-center mb-16">
-            <span className="text-trust-green text-sm font-semibold uppercase tracking-wider">Admissions</span>
-            <h2 className="text-4xl font-bold text-warm-white mt-4">Your Journey Starts Here</h2>
+            <span className="text-trust-green text-sm font-semibold uppercase tracking-wider">Admissions Process</span>
+            <h2 className="text-4xl font-bold text-warm-white mt-4">Enrolment Pathway</h2>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { step: "01", title: "Apply Online", desc: "Complete our simple application form with your basic information", icon: FileText },
-              { step: "02", title: "Assessment", desc: "Take our eligibility assessment to find the right programme", icon: ClipboardCheck },
-              { step: "03", title: "Enroll & Start", desc: "Confirm your placement and begin your transformation", icon: GraduationCap },
+              { step: "01", title: "Submit Application", desc: "Complete the online enrolment form with your educational background and programme selection", icon: FileText },
+              { step: "02", title: "Eligibility Assessment", desc: "Complete our structured assessment to determine programme suitability and placement", icon: ClipboardCheck },
+              { step: "03", title: "Programme Enrolment", desc: "Confirm your placement, complete registration, and begin structured learning", icon: GraduationCap },
             ].map((item, i) => {
               const Icon = item.icon;
               return (
@@ -338,16 +338,16 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#041326] via-[#041326]/95 to-[#041326]" />
         </div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-4xl font-bold text-warm-white mb-6">Ready to Transform Your Future?</h2>
+          <h2 className="text-4xl font-bold text-warm-white mb-6">Begin Your Professional Qualification</h2>
           <p className="text-warm-white/60 text-lg mb-10">
-            Join thousands of students who have already taken the first step towards a rewarding career.
+            Enrol in a nationally accredited TVET programme and begin your transition to formal employment.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="/admissions" className="bg-heritage-gold hover:bg-heritage-gold/90 text-institutional-navy px-8 py-4 rounded-xl font-semibold text-lg transition-all">
-              Apply Now
+              Begin Application
             </a>
             <a href="/contact" className="border border-warm-white/20 hover:border-warm-white/40 text-warm-white px-8 py-4 rounded-xl font-semibold text-lg transition-all">
-              Contact Admissions
+              Contact Admissions Office
             </a>
           </div>
         </div>
