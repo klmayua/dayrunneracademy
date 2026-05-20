@@ -101,47 +101,41 @@ function MobileNav() {
 
   return (
     <>
-      <nav className="md:hidden fixed top-0 left-0 right-0 z-50 
-        bg-[rgba(3,12,28,0.96)] backdrop-blur-xl border-b border-white/[0.06]">
-        <div className="flex items-center justify-between px-5 h-[64px]">
-          <Link href="/" className="flex items-center gap-3" onClick={() => setMobileMenuOpen(false)}>
-            <div className="w-9 h-9 bg-heritage-gold rounded-lg flex items-center justify-center">
-              <GraduationCap className="w-5 h-5 text-[#041326]" />
-            </div>
-            <div className="flex items-center">
-              <span className="text-[16px] font-semibold text-white">Dayrunner</span>
-              <span className="text-[12px] text-white/[0.24] mx-1.5">|</span>
-              <span className="text-[16px] font-semibold text-white">Academy</span>
-            </div>
-          </Link>
-          
-          <div className="flex items-center gap-3">
-            <Link 
-              href="/signin"
-              className="text-[14px] font-medium text-white/[0.80] hover:text-white transition-colors"
-            >
-              Sign In
-            </Link>
-            <button 
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-white/80 hover:text-white transition-colors"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+      {/* Premium Floating Mobile Navbar */}
+      <nav className="md:hidden fixed top-3.5 left-1/2 -translate-x-1/2 z-50 
+        w-[calc(100%-20px)] max-w-[560px] h-[68px] rounded-full
+        bg-[rgba(6,21,42,0.78)] backdrop-blur-[24px] 
+        border border-[rgba(212,175,55,0.10)] 
+        shadow-[0_8px_30px_rgba(0,0,0,0.28)]
+        px-4 flex items-center justify-between">
+        {/* Compact Brand */}
+        <Link href="/" className="flex items-center gap-2.5" onClick={() => setMobileMenuOpen(false)}>
+          <div className="w-10 h-10 bg-heritage-gold rounded-[10px] flex items-center justify-center">
+            <GraduationCap className="w-5 h-5 text-[#041326]" />
           </div>
-        </div>
+          <span className="text-[14px] font-semibold text-white">Dayrunner</span>
+        </Link>
+
+        {/* Menu Trigger */}
+        <button 
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="w-11 h-11 bg-white/[0.04] border border-white/[0.06] rounded-full 
+            flex items-center justify-center hover:bg-white/[0.08] hover:border-heritage-gold/20 transition-all"
+          aria-label="Toggle menu"
+        >
+          {mobileMenuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5 text-white" />}
+        </button>
       </nav>
 
       {/* Mobile Menu Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden fixed inset-0 top-[64px] z-40 bg-[rgba(3,12,28,0.98)] backdrop-blur-xl"
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="md:hidden fixed inset-0 top-0 z-40 bg-[#071A2F] backdrop-blur-[20px]"
           >
             <div className="flex flex-col p-6 space-y-2">
               {navItems.map((item) => {
