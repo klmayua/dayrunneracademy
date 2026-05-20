@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --institutional-navy: #081220;
+  --charcoal-black: #111827;
+  --trust-green: #10B981;
+  --heritage-gold: #D4AF37;
+  --soft-sky-blue: #38BDF8;
+  --warm-white: #F8FAFC;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: var(--institutional-navy);
+  color: var(--warm-white);
+}
+
+@layer utilities {
+  .text-navy { color: var(--institutional-navy); }
+  .text-charcoal { color: var(--charcoal-black); }
+  .text-trust { color: var(--trust-green); }
+  .text-gold { color: var(--heritage-gold); }
+  .text-sky { color: var(--soft-sky-blue); }
+  
+  .bg-navy { background-color: var(--institutional-navy); }
+  .bg-charcoal { background-color: var(--charcoal-black); }
+  .bg-trust { background-color: var(--trust-green); }
+  .bg-gold { background-color: var(--heritage-gold); }
+  .bg-sky { background-color: var(--soft-sky-blue); }
+  .bg-warm { background-color: var(--warm-white); }
+}
