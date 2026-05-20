@@ -119,23 +119,11 @@ export default function Home() {
               </div>
             ))}
           </motion.div>
-        </div>
+</div>
       </section>
 
-      {/* Trust Indicators */}
-      <section className="py-12 px-6 border-y border-white/5 card/30">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-center text-warm-white/40 text-sm mb-8">Trusted by leading organizations</p>
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-50">
-            {["Nigerian Government", "World Bank", "UNESCO", "GTBank", "Shell Nigeria"].map((org, i) => (
-              <span key={i} className="text-warm-white/60 text-lg font-medium">{org}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Programme Tracks */}
-      <section id="programmes" className="py-20 px-6">
+{/* Programme Tracks - Elevated Dark */}
+      <section id="programmes" className="py-20 px-6 bg-[#071B34]">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeUp} className="text-center mb-16">
             <span className="text-trust-green text-sm font-semibold uppercase tracking-wider">Our Programmes</span>
@@ -228,8 +216,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-20 px-6 card/50">
+      {/* Benefits Section - Atmospheric Dark */}
+      <section className="py-20 px-6 bg-[#0A2240]">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div {...fadeUp}>
@@ -297,8 +285,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-20 px-6">
+      {/* How It Works - Elevated */}
+      <section className="py-20 px-6 bg-[#071B34]">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeUp} className="text-center mb-16">
             <span className="text-trust-green text-sm font-semibold uppercase tracking-wider">Admissions</span>
@@ -364,6 +352,18 @@ export default function Home() {
             <a href="/contact" className="border border-warm-white/20 hover:border-warm-white/40 text-warm-white px-8 py-4 rounded-xl font-semibold text-lg transition-all">
               Contact Admissions
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Indicators - Institutional Validation */}
+      <section className="py-16 px-6 bg-[#0A2240]">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-center text-warm-white/40 text-sm mb-10">Trusted by leading organizations</p>
+          <div className="flex flex-wrap justify-center items-center gap-16 opacity-40">
+            {["Nigerian Government", "World Bank", "UNESCO", "GTBank", "Shell Nigeria"].map((org, i) => (
+              <span key={i} className="text-warm-white/50 text-lg font-medium tracking-wide">{org}</span>
+            ))}
           </div>
         </div>
       </section>

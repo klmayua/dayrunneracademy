@@ -47,7 +47,7 @@ export default function AboutPage() {
         </div>
       </nav>
 
-      <section className="pt-32 pb-16 px-6">
+      <section className="pt-32 pb-16 px-6 bg-[#071B34]">
         <div className="max-w-7xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center max-w-3xl mx-auto">
             <span className="text-trust-green text-sm font-semibold uppercase tracking-wider">About Us</span>
@@ -59,7 +59,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-[#0A2240]">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
@@ -102,7 +102,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-charcoal-black/50">
+      <section className="py-20 px-6 bg-[#071B34]">
         <div className="max-w-7xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
             <h2 className="text-4xl font-bold text-warm-white">Our Core Values</h2>
@@ -135,7 +135,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-charcoal-black/50">
+      <section className="py-20 px-6 bg-[#071B34]">
         <div className="max-w-7xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
             <h2 className="text-4xl font-bold text-warm-white">Leadership Team</h2>

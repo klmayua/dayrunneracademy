@@ -71,7 +71,7 @@ export default function PartnersPage() {
       </nav>
 
       {/* Hero */}
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-32 pb-20 px-6 bg-[#071B34]">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeUp} className="text-center max-w-4xl mx-auto">
             <span className="text-trust-green text-sm font-semibold uppercase tracking-wider">Partners & Sponsors</span>
@@ -86,7 +86,7 @@ export default function PartnersPage() {
       </section>
 
       {/* Partner Logos */}
-      <section className="py-12 px-6 border-y border-white/5 bg-charcoal-black/30">
+      <section className="py-12 px-6 border-y border-white/5 bg-[#0A2240]">
         <div className="max-w-7xl mx-auto">
           <p className="text-center text-warm-white/40 text-sm mb-8">Our Partners</p>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
@@ -135,7 +135,7 @@ export default function PartnersPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-charcoal-black/50">
+      <section className="py-20 px-6 bg-[#071B34]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-warm-white mb-6">Become a Partner</h2>
           <p className="text-warm-white/60 text-lg mb-10">

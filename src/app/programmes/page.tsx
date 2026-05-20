@@ -96,7 +96,7 @@ export default function ProgrammesPage() {
         </div>
       </nav>
 
-      <section className="pt-32 pb-16 px-6">
+      <section className="pt-32 pb-16 px-6 bg-[#071B34]">
         <div className="max-w-7xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center">
             <span className="text-trust-green text-sm font-semibold uppercase tracking-wider">Our Programmes</span>
@@ -119,7 +119,7 @@ export default function ProgrammesPage() {
         </div>
       </section>
 
-      <section className="px-6 pb-20">
+      <section className="px-6 pb-20 bg-[#0A2240]">
         <div className="max-w-7xl mx-auto">
           <div className="grid gap-8">
             {programmes.map((prog, i) => (

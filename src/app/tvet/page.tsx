@@ -65,7 +65,7 @@ export default function TVETPage() {
       </nav>
 
       {/* Hero */}
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-32 pb-20 px-6 bg-[#071B34]">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeUp} className="text-center max-w-4xl mx-auto">
             <span className="text-trust-green text-sm font-semibold uppercase tracking-wider">National TVET Initiative</span>
@@ -100,7 +100,7 @@ export default function TVETPage() {
       </section>
 
       {/* About */}
-      <section className="py-20 px-6 bg-charcoal-black/50">
+      <section className="py-20 px-6 bg-[#0A2240]">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div {...fadeUp}>
