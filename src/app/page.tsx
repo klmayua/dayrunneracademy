@@ -9,7 +9,19 @@ import {
   ArrowRight, 
   MapPin, 
   Calendar,
-  CheckCircle
+  CheckCircle,
+  Laptop,
+  Zap,
+  HeartPulse,
+  Sprout,
+  Car,
+  Hammer,
+  Building2,
+  Map,
+  FileText,
+  ClipboardCheck,
+  UserCheck,
+  ShieldCheck
 } from "lucide-react";
 
 const fadeUp = {
@@ -17,6 +29,8 @@ const fadeUp = {
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.5 }
 };
+
+const statIcons = [Users, TrendingUp, Building2, Map];
 
 export default function Home() {
   return (
@@ -33,8 +47,8 @@ export default function Home() {
           <div className="hidden md:flex items-center gap-8">
             <a href="#programmes" className="text-warm-white/70 hover:text-warm-white transition-colors">Programmes</a>
             <a href="#about" className="text-warm-white/70 hover:text-warm-white transition-colors">About</a>
-            <a href="#admissions" className="text-warm-white/70 hover:text-warm-white transition-colors">Admissions</a>
-            <a href="#contact" className="text-warm-white/70 hover:text-warm-white transition-colors">Contact</a>
+            <a href="/admissions" className="text-warm-white/70 hover:text-warm-white transition-colors">Admissions</a>
+            <a href="/contact" className="text-warm-white/70 hover:text-warm-white transition-colors">Contact</a>
           </div>
           <button className="bg-heritage-gold hover:bg-heritage-gold/90 text-institutional-navy px-5 py-2 rounded-lg font-semibold transition-all">
             Apply Now
@@ -68,15 +82,18 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Stats */}
+          {/* Stats with Icons */}
           <motion.div {...fadeUp} transition={{ delay: 0.2 }} className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { value: "15,000+", label: "Students Enrolled" },
-              { value: "89%", label: "Employment Rate" },
-              { value: "50+", label: "Industry Partners" },
-              { value: "36", label: "States Covered" },
+              { value: "15,000+", label: "Students Enrolled", icon: Users },
+              { value: "89%", label: "Employment Rate", icon: TrendingUp },
+              { value: "50+", label: "Industry Partners", icon: Building2 },
+              { value: "36", label: "States Covered", icon: Map },
             ].map((stat, i) => (
-              <div key={i} className="bg-charcoal-black/50 border border-white/5 rounded-2xl p-6 text-center">
+              <div key={i} className="bg-charcoal-black/50 border border-white/5 rounded-2xl p-6 text-center hover:border-heritage-gold/20 transition-all group">
+                <div className="w-12 h-12 bg-heritage-gold/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="w-6 h-6 text-heritage-gold" strokeWidth={1.75} />
+                </div>
                 <div className="text-3xl font-bold text-heritage-gold mb-1">{stat.value}</div>
                 <div className="text-warm-white/50 text-sm">{stat.label}</div>
               </div>
@@ -113,58 +130,63 @@ export default function Home() {
               {
                 title: "Digital Technology",
                 desc: "Software development, data analytics, cybersecurity, and IT support",
-                icon: "💻",
+                icon: Laptop,
                 color: "sky"
               },
               {
                 title: "Automotive Engineering",
                 desc: "Vehicle maintenance, diagnostics, and automotive technology",
-                icon: "🚗",
+                icon: Car,
                 color: "gold"
               },
               {
                 title: "Agriculture & Agribusiness",
                 desc: "Modern farming techniques, food processing, and agricultural technology",
-                icon: "🌾",
+                icon: Sprout,
                 color: "green"
               },
               {
                 title: "Healthcare & Nursing",
                 desc: "Patient care, medical assistance, and healthcare operations",
-                icon: "🏥",
+                icon: HeartPulse,
                 color: "sky"
               },
               {
                 title: "Hospitality & Tourism",
                 desc: "Hotel management, culinary arts, and tourism operations",
-                icon: "🏨",
+                icon: Zap,
                 color: "gold"
               },
               {
                 title: "Manufacturing & Trades",
                 desc: "Welding, fabrication, machining, and industrial production",
-                icon: "⚙️",
+                icon: Hammer,
                 color: "green"
               },
-            ].map((prog, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-charcoal-black border border-white/5 rounded-2xl p-8 hover:border-heritage-gold/30 transition-all group"
-              >
-                <div className="text-4xl mb-4">{prog.icon}</div>
-                <h3 className="text-xl font-semibold text-warm-white mb-3 group-hover:text-heritage-gold transition-colors">
-                  {prog.title}
-                </h3>
-                <p className="text-warm-white/50">{prog.desc}</p>
-                <div className="mt-6 flex items-center text-heritage-gold text-sm font-medium cursor-pointer">
-                  View Courses <ArrowRight className="w-4 h-4 ml-1" />
-                </div>
-              </motion.div>
-            ))}
+            ].map((prog, i) => {
+              const Icon = prog.icon;
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-charcoal-black border border-white/5 rounded-2xl p-8 hover:border-heritage-gold/30 transition-all group"
+                >
+                  <div className="w-12 h-12 bg-heritage-gold/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-heritage-gold/20 transition-colors">
+                    <Icon className="w-6 h-6 text-heritage-gold" strokeWidth={1.75} />
+                  </div>
+                  <h3 className="text-xl font-semibold text-warm-white mb-3 group-hover:text-heritage-gold transition-colors">
+                    {prog.title}
+                  </h3>
+                  <p className="text-warm-white/50">{prog.desc}</p>
+                  <div className="mt-6 flex items-center text-heritage-gold text-sm font-medium cursor-pointer">
+                    View Courses <ArrowRight className="w-4 h-4 ml-1" />
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -189,7 +211,7 @@ export default function Home() {
                   "Scholarship opportunities for qualifying students"
                 ].map((benefit, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-trust-green flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-trust-green flex-shrink-0" strokeWidth={1.75} />
                     <span className="text-warm-white/80">{benefit}</span>
                   </div>
                 ))}
@@ -204,26 +226,21 @@ export default function Home() {
             >
               <div className="bg-gradient-to-br from-charcoal-black to-institutional-navy border border-white/10 rounded-3xl p-8">
                 <div className="grid grid-cols-2 gap-6">
-                  <div className="bg-white/5 rounded-2xl p-6 text-center">
-                    <TrendingUp className="w-8 h-8 text-trust-green mx-auto mb-3" />
-                    <div className="text-2xl font-bold text-warm-white">89%</div>
-                    <div className="text-warm-white/40 text-sm">Employment Rate</div>
-                  </div>
-                  <div className="bg-white/5 rounded-2xl p-6 text-center">
-                    <Award className="w-8 h-8 text-heritage-gold mx-auto mb-3" />
-                    <div className="text-2xl font-bold text-warm-white">100%</div>
-                    <div className="text-warm-white/40 text-sm">Certification Rate</div>
-                  </div>
-                  <div className="bg-white/5 rounded-2xl p-6 text-center">
-                    <Users className="w-8 h-8 text-sky-blue mx-auto mb-3" />
-                    <div className="text-2xl font-bold text-warm-white">500+</div>
-                    <div className="text-warm-white/40 text-sm">Hiring Partners</div>
-                  </div>
-                  <div className="bg-white/5 rounded-2xl p-6 text-center">
-                    <GraduationCap className="w-8 h-8 text-heritage-gold mx-auto mb-3" />
-                    <div className="text-2xl font-bold text-warm-white">15K+</div>
-                    <div className="text-warm-white/40 text-sm">Alumni</div>
-                  </div>
+                  {[
+                    { icon: TrendingUp, value: "89%", label: "Employment Rate", color: "text-trust-green" },
+                    { icon: Award, value: "100%", label: "Certification Rate", color: "text-heritage-gold" },
+                    { icon: Users, value: "500+", label: "Hiring Partners", color: "text-sky-blue" },
+                    { icon: GraduationCap, value: "15K+", label: "Alumni", color: "text-heritage-gold" },
+                  ].map((item, i) => {
+                    const Icon = item.icon;
+                    return (
+                      <div key={i} className="bg-white/5 rounded-2xl p-6 text-center">
+                        <Icon className={`w-8 h-8 ${item.color} mx-auto mb-3`} strokeWidth={1.75} />
+                        <div className="text-2xl font-bold text-warm-white">{item.value}</div>
+                        <div className="text-warm-white/40 text-sm">{item.label}</div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </motion.div>
@@ -241,34 +258,37 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { step: "01", title: "Apply Online", desc: "Complete our simple application form with your basic information" },
-              { step: "02", title: "Assessment", desc: "Take our eligibility assessment to find the right programme" },
-              { step: "03", title: "Enroll & Start", desc: "Confirm your placement and begin your transformation" },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.15 }}
-                viewport={{ once: true }}
-                className="relative"
-              >
-                <div className="text-8xl font-bold text-heritage-gold/10 absolute -top-4 -left-2">{item.step}</div>
-                <div className="relative z-10 bg-charcoal-black border border-white/5 rounded-2xl p-8">
-                  <div className="w-12 h-12 bg-heritage-gold/20 rounded-xl flex items-center justify-center mb-6">
-                    <span className="text-heritage-gold font-bold">{item.step}</span>
+              { step: "01", title: "Apply Online", desc: "Complete our simple application form with your basic information", icon: FileText },
+              { step: "02", title: "Assessment", desc: "Take our eligibility assessment to find the right programme", icon: ClipboardCheck },
+              { step: "03", title: "Enroll & Start", desc: "Confirm your placement and begin your transformation", icon: GraduationCap },
+            ].map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.15 }}
+                  viewport={{ once: true }}
+                  className="relative"
+                >
+                  <div className="text-8xl font-bold text-heritage-gold/10 absolute -top-4 -left-2">{item.step}</div>
+                  <div className="relative z-10 bg-charcoal-black border border-white/5 rounded-2xl p-8">
+                    <div className="w-12 h-12 bg-heritage-gold/20 rounded-xl flex items-center justify-center mb-6">
+                      <Icon className="w-6 h-6 text-heritage-gold" strokeWidth={1.75} />
+                    </div>
+                    <h3 className="text-xl font-semibold text-warm-white mb-3">{item.title}</h3>
+                    <p className="text-warm-white/50">{item.desc}</p>
                   </div>
-                  <h3 className="text-xl font-semibold text-warm-white mb-3">{item.title}</h3>
-                  <p className="text-warm-white/50">{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
 
           <div className="text-center mt-12">
-            <button className="bg-heritage-gold hover:bg-heritage-gold/90 text-institutional-navy px-8 py-4 rounded-xl font-semibold text-lg transition-all">
+            <a href="/admissions" className="inline-block bg-heritage-gold hover:bg-heritage-gold/90 text-institutional-navy px-8 py-4 rounded-xl font-semibold text-lg transition-all">
               Begin Application
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -281,12 +301,12 @@ export default function Home() {
             Join thousands of students who have already taken the first step towards a rewarding career.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="bg-heritage-gold hover:bg-heritage-gold/90 text-institutional-navy px-8 py-4 rounded-xl font-semibold text-lg transition-all">
+            <a href="/admissions" className="bg-heritage-gold hover:bg-heritage-gold/90 text-institutional-navy px-8 py-4 rounded-xl font-semibold text-lg transition-all">
               Apply Now
-            </button>
-            <button className="border border-warm-white/20 hover:border-warm-white/40 text-warm-white px-8 py-4 rounded-xl font-semibold text-lg transition-all">
+            </a>
+            <a href="/contact" className="border border-warm-white/20 hover:border-warm-white/40 text-warm-white px-8 py-4 rounded-xl font-semibold text-lg transition-all">
               Contact Admissions
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -318,20 +338,20 @@ export default function Home() {
             <div>
               <h4 className="text-warm-white font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-warm-white/50">
-                <li><a href="#" className="hover:text-warm-white">About Us</a></li>
-                <li><a href="#" className="hover:text-warm-white">Admissions</a></li>
+                <li><a href="/about" className="hover:text-warm-white">About Us</a></li>
+                <li><a href="/admissions" className="hover:text-warm-white">Admissions</a></li>
                 <li><a href="#" className="hover:text-warm-white">Campus Life</a></li>
-                <li><a href="#" className="hover:text-warm-white">Contact</a></li>
+                <li><a href="/contact" className="hover:text-warm-white">Contact</a></li>
               </ul>
             </div>
             <div>
               <h4 className="text-warm-white font-semibold mb-4">Contact</h4>
               <div className="space-y-3 text-warm-white/50">
                 <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4" /> Abuja, Nigeria
+                  <MapPin className="w-4 h-4" strokeWidth={1.75} /> Abuja, Nigeria
                 </div>
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4" /> Mon-Fri 8am-6pm
+                  <Calendar className="w-4 h-4" strokeWidth={1.75} /> Mon-Fri 8am-6pm
                 </div>
               </div>
             </div>

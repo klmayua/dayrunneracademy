@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Clock, Award, TrendingUp, ArrowRight, Check } from "lucide-react";
+import { GraduationCap, Clock, Award, TrendingUp, ArrowRight, Check, Laptop, Car, Sprout, HeartPulse, Zap, Hammer } from "lucide-react";
 
 const programmes = [
   {
