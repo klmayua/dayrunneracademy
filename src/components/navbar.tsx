@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { GraduationCap, Menu, X, LogIn } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { MobileBottomNav } from "./mobile-bottom-nav";
+import { FloatingSupportButtons } from "./floating-support";
 
 const navItems = [
   { label: "Programmes", href: "/programmes" },
@@ -185,6 +187,8 @@ export function Navbar() {
     <>
       <DesktopNav />
       <MobileNav />
+      <MobileBottomNav />
+      <FloatingSupportButtons />
     </>
   );
 }

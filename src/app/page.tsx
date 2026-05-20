@@ -35,7 +35,7 @@ const statIcons = [Users, TrendingUp, Building2, Map];
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-institutional-navy">
+    <div className="min-h-screen bg-institutional-navy pb-20 md:pb-0">
       <Navbar />
 
       {/* Hero Section with Strategic Image */}
