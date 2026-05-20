@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Clock, Award, TrendingUp, ArrowRight, Check, Laptop, Car, Sprout, HeartPulse, Zap, Hammer } from "lucide-react";
 
@@ -146,9 +147,9 @@ export default function ProgrammesPage() {
                       <p className="text-warm-white/50 text-sm">{prog.jobs}</p>
                     </div>
                     <div className="mt-6">
-                      <button className="w-full bg-heritage-gold hover:bg-heritage-gold/90 text-institutional-navy py-3 rounded-xl font-semibold transition-all flex items-center justify-center gap-2">
+                      <Link href={`/programmes/${prog.id}`} className="block w-full bg-heritage-gold hover:bg-heritage-gold/90 text-institutional-navy py-3 rounded-xl font-semibold transition-all flex items-center justify-center gap-2">
                         View Details <ArrowRight className="w-4 h-4" />
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
